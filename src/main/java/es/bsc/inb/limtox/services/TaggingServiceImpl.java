@@ -30,7 +30,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import edu.stanford.nlp.objectbank.ObjectBank;
-import es.bsc.inb.limtox.exceptions.LogicalException;
+import es.bsc.inb.limtox.exceptions.MoreThanOneEntityException;
 import es.bsc.inb.limtox.model.ChemicalCompound;
 import es.bsc.inb.limtox.model.ChemicalCompoundCytochromeSentence;
 import es.bsc.inb.limtox.model.ChemicalCompoundHepatotoxicityTermPattern;
