@@ -188,7 +188,7 @@ class TaggingServiceImpl implements TaggingService {
 			Double score = new Double(data[0]);
 			Document document =  documents.get(docId);
 			if(document!=null) {
-				Sentence sentence = new Sentence(id, order, text, score, document);
+				Sentence sentence = new Sentence(id_sentence, order, text, score, document);
 				document.getSentences().add(sentence);
 			}else {
 				taggingLog.info(" The sentence do not correspond to a paragraph id:  " + id_sentence );
@@ -260,6 +260,9 @@ class TaggingServiceImpl implements TaggingService {
 				if(ocurrences!=null) {
 					HepatotoxicityTermSentence hepatotoxicityTermSentence = new HepatotoxicityTermSentence(hepatotoxicityTerm,1f, ocurrences.size(), ocurrences, sentence);
 					sentence.getHepatotoxicityTermSentences().add(hepatotoxicityTermSentence);
+					for (Ocurrence ocurrence : ocurrences) {
+						ocurrence.setHepatotoxicityTermSentence(hepatotoxicityTermSentence);
+					}
 				}
 			}
 		}
@@ -325,6 +328,9 @@ class TaggingServiceImpl implements TaggingService {
 			if(ocurrences!=null) {
 				ChemicalCompoundSentence chemicalCompoundSentence = new ChemicalCompoundSentence(chemicalCompound, chemicalCompoundValueType,1f, ocurrences.size(), ocurrences, sentence);
 				sentence.getChemicalCompoundSentences().add(chemicalCompoundSentence);
+				for (Ocurrence ocurrence : ocurrences) {
+					ocurrence.setChemicalCompoundSentence(chemicalCompoundSentence);
+				}
 			}
 		}
 		

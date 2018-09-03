@@ -10,6 +10,9 @@ public class Ocurrence {
 	@JsonIgnore
 	private HepatotoxicityTermSentence hepatotoxicityTermSentence;
 	
+	@JsonIgnore
+	private ChemicalCompoundSentence chemicalCompoundSentence;
+	
 	public Ocurrence(Integer start, Integer end) {
 		super();
 		this.start = start;
@@ -38,6 +41,14 @@ public class Ocurrence {
 
 	public void setHepatotoxicityTermSentence(HepatotoxicityTermSentence hepatotoxicityTermSentence) {
 		this.hepatotoxicityTermSentence = hepatotoxicityTermSentence;
+	}
+
+	public ChemicalCompoundSentence getChemicalCompoundSentence() {
+		return chemicalCompoundSentence;
+	}
+
+	public void setChemicalCompoundSentence(ChemicalCompoundSentence chemicalCompoundSentence) {
+		this.chemicalCompoundSentence = chemicalCompoundSentence;
 	}
 	
 	

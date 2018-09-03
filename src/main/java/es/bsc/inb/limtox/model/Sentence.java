@@ -49,11 +49,13 @@ public class Sentence implements LimtoxEntity {
 	}
 
 	
-	public Sentence(String[] id2, Integer order, String text, Double score, Document document) {
+	public Sentence(String sentenceId, Integer order, String text, Double score, Document document) {
 		super();
+		this.sentenceId=sentenceId;
 		this.document = document;
 		this.text = text;
 		this.order=order;
+		this.score=score;
 	}
 
 	public Integer getId() {
